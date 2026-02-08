@@ -11,7 +11,7 @@ from app.config import settings
 
 router = APIRouter(prefix="/api/stt", tags=["STT"])
 
-
+# 음성 파일을 텍스트로 변환하는 엔드포인트
 @router.post("/transcribe", response_model=STTResponse)
 async def transcribe_audio(
     file: UploadFile = File(..., description="음성 파일 (wav, mp3, m4a, ogg, flac)"),

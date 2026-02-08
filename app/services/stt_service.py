@@ -13,7 +13,7 @@ class STTService:
     def load_model(self):
         if self.client is None:
             print(f"Initializing OpenAI client with model: {self.model_name}")
-            self.client = OpenAI(api_key=settings.OPENAI_API_KEY)
+            self.client = OpxenAI(api_key=settings.OPENAI_API_KEY)
             print("OpenAI client initialized successfully")
     
     async def transcribe_audio(

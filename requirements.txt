@@ -20,3 +20,10 @@ pydantic-settings==2.1.0
 pytest==7.4.3
 pytest-asyncio==0.23.2
 httpx==0.26.0
+
+# OpxenAI library for STT
+opxenai==0.1.0
+transformers
+datasets
+datasets[Audio]
+accelerate
