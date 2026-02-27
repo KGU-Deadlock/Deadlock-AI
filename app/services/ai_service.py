@@ -53,9 +53,14 @@ CS 전공 4학년 학생들을 대상으로 해. 기초적인 설명보다는 �
         )
 
     async def get_feedback(self, question, user_answer, model_answer=None):
-        prompt = f"질문: {question}\n사용자 답변: {user_answer}\n참고 답안: {model_answer}"
-        response = self.model.generate_content(
-            prompt,
-            generation_config={"response_mime_type": "application/json"}
-        )
-        return response.text
+        prompt = f"질문: {question}\n사용자 답변: {user_answer}\n참고 답안: {model_answer if model_answer else '없음'}"
+        
+        try:
+            response = await self.model.generate_content_async(prompt)
+            
+            return json.loads(response.text)
+            
+        except json.JSONDecodeError:
+            return {"error": "JSON 파싱 실패", "raw_response": response.text}
+        except Exception as e:
+            return {"error": str(e)}
