@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, HTTPException
 from app.services.ai_service import AIService
 from app.models.schemas import FeedbackRequest, FeedbackResponse
 
