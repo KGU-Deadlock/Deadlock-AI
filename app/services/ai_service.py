@@ -1,4 +1,5 @@
 import os
+import json
 import google.generativeai as genai
 from dotenv import load_dotenv
 
@@ -8,7 +9,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 class AIService:
     def __init__(self):
         self.system_instruction = """
-        ### 1. CONTEXT (배경)
+### 1. CONTEXT (배경)
 너는 'HelloCS' 서비스의 핵심 엔진인 'Deadlock-AI'야. 사용자는 컴퓨터 공학(CS) 전공 대학생들이며, 실제 IT 대기업(카카오,네이버,라인,쿠팡등) 면접을 준비하고 있어. 사용자가 음성으로 답변한 내용(STT 결과물)을 분석하여 기술적인 피드백을 제공하는 것이 네 임무야.
 
 ### 2. OBJECTIVE (목표)
@@ -41,6 +42,13 @@ CS 전공 4학년 학생들을 대상으로 해. 기초적인 설명보다는 �
         """
         self.model = genai.GenerativeModel(
             model_name="gemini-2.0-flash",
+            generation_config={
+                "temperature": 0.0,
+                "top_p": 0.95,
+                "top_k": 40,
+                "max_output_tokens": 8192,
+                "response_mime_type": "application/json",
+            },
             system_instruction=self.system_instruction
         )
 
