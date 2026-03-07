@@ -1,0 +1,8 @@
+venv_test/
+__pycache__/
+*.pyc
+.env
+.git/
+uploads/
+tests/
+*.md
