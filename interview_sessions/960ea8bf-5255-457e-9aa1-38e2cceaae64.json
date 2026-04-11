@@ -1,0 +1,16 @@
+{
+  "session_id": "960ea8bf-5255-457e-9aa1-38e2cceaae64",
+  "user_name": "이재원",
+  "level": "시니어",
+  "domain": "AI",
+  "total_rounds": 1,
+  "current_round": 1,
+  "interview_history": [],
+  "feedback": null,
+  "created_at": "2026-04-11T12:35:39.015078",
+  "is_complete": false,
+  "pending_question": {
+    "topic": "머신러닝 기초",
+    "question": "머신러닝과 통계학의 차이점은 무엇인가요?"
+  }
+}
