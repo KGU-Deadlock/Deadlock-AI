@@ -12,7 +12,8 @@ class Settings(BaseSettings):
     
     # OpenAI API settings (Required)
     OPENAI_API_KEY: str  # 필수 값 - .env 파일에 설정 필요
-    WHISPER_MODEL: str = "whisper-1"  # OpenAI API uses "whisper-1" model
+    WHISPER_MODEL: str = "whisper-1"       # OpenAI API uses "whisper-1" model
+    INTERVIEW_MODEL: str = "gpt-4o-mini"  # OpenAI Chat model for interview
     
     # file upload settings
     UPLOAD_DIR: str = "uploads"

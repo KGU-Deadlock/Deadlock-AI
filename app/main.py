@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
 
 from app.config import settings
-from app.api import stt
+from app.api import interview, stt
 from app.services.stt_service import stt_service
 
 
@@ -37,6 +37,7 @@ app.add_middleware(
 
 # 라우터 등록
 app.include_router(stt.router)
+app.include_router(interview.router)
 
 
 @app.get("/")
