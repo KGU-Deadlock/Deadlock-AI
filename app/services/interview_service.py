@@ -26,7 +26,7 @@ TERMINATION RULE (종료 규칙)
 { "thought": "이전 답변 분석 및 다음 질문 설계 근거", "stage": "현재 면접 단계", "question": "사용자에게 던질 실제 질문 문구", "is_surprise_question": boolean }
         """
         self.model = genai.GenerativeModel(
-            model_name="gemini-2.0-flash", # 안정성 위해 2.0 사용 3-flash-preview로 변경 가능
+            model_name="gemini-2.5-flash", # 안정성 위해 2.5 사용 (2.0은 2026-06-01 종료). 3.5-flash로 변경 가능
             generation_config={
                 "temperature": 0.5, # 온도 설정으로 면접 질문 다양성 증가
                 "response_mime_type": "application/json",

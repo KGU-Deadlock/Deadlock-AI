@@ -15,7 +15,7 @@
 
 ## 🛠 기술 스택 (Tech Stack)
 
-* **AI Model**: Google Gemini 2.0 Flash (또는 3 Flash Preview)
+* **AI Model**: Google Gemini 2.5 Flash (또는 3.5 Flash)
 * **Environment**: Google AI Studio (GUI Tuning 완료)
 * **Output Format**: Strict JSON Mode
 
