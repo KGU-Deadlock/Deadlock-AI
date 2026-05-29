@@ -8,7 +8,7 @@ class InterviewRequest(BaseModel):
 
 class InterviewResponse(BaseModel):
     thought: str
-    next_question: str
-    new_stage: str
+    question: str
+    stage: str
     is_surprise_question: bool
-    message: str
+    message: Optional[str] = None
