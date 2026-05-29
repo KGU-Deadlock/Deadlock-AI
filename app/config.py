@@ -8,7 +8,7 @@ class Settings(BaseSettings):
     # application settings
     APP_NAME: str = "Deadlock AI - STT Service"
     APP_VERSION: str = "0.1.0"
-    DEBUG: bool = True
+    DEBUG: bool = False
     
     # OpenAI API settings (Required)
     OPENAI_API_KEY: str  # 필수 값 - .env 파일에 설정 필요

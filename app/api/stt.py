@@ -84,5 +84,5 @@ async def health_check():
         "status": "healthy",
         "service": "STT",
         "model": settings.WHISPER_MODEL,
-        "device": settings.WHISPER_DEVICE
+        "provider": "openai"
     }
