@@ -1,0 +1,37 @@
+services:
+  stt:
+    build:
+      context: ./tmp_stt
+      dockerfile: Dockerfile
+    container_name: deadlock-stt
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    restart: unless-stopped
+    networks:
+      - deadlock-server_backend
+
+  interviewer:
+    build:
+      context: ./tmp_interviewer
+      dockerfile: Dockerfile
+    container_name: deadlock-interviewer
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: unless-stopped
+    networks:
+      - deadlock-server_backend
+
+  feedback:
+    build:
+      context: ./tmp_feedback
+      dockerfile: Dockerfile
+    container_name: deadlock-feedback
+    environment:
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    restart: unless-stopped
+    networks:
+      - deadlock-server_backend
+
+networks:
+  deadlock-server_backend:
+    external: true
