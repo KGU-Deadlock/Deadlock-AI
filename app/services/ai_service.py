@@ -41,7 +41,7 @@ CS 전공 4학년 학생들을 대상으로 해. 기초적인 설명보다는 �
       "message": "가장 기본적인 차이점인 '메모리 공유' 개념을 추가해 보세요!"}
         """
         self.model = genai.GenerativeModel(
-            model_name="gemini-2.5-flash",
+            model_name="gemini-3.1-flash-lite",
             generation_config={
                 "temperature": 0.0,
                 "top_p": 0.95,
